@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include <boost/yap/algorithm.hpp>
+#include <boost/yap/print.hpp>
 
 
 template <boost::yap::expr_kind Kind, typename Tuple>
@@ -22,6 +23,8 @@ int main()
 {
   auto cout = boost::yap::make_terminal<stream_expr>(std::cout);
   cout << "Hello" << ',' << " World!" << '\n';
+
+  boost::yap::print(std::cout, cout);
 
   return 0;
 }
