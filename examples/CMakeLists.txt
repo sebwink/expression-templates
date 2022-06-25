@@ -1,0 +1,7 @@
+FILE(GLOB SOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.example.cpp)
+foreach(SOURCE ${SOURCES})
+  get_filename_component(EXAMPLE_NAME ${SOURCE} NAME_WE)
+  add_executable(${EXAMPLE_NAME}_example ${SOURCE})
+  target_compile_options(${EXAMPLE_NAME}_example PUBLIC "$<$<COMPILE_LANG_AND_ID:CXX,MSVC>:/permissive->")
+  target_link_libraries(${EXAMPLE_NAME}_example PUBLIC Boost::boost)
+endforeach()

@@ -1,4 +1,6 @@
-cmake_minimum_required(3.18.0)
+cmake_minimum_required(VERSION 3.18.4)
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 project(
   expression-templates
@@ -7,3 +9,6 @@ project(
 )
 
 add_subdirectory(cmake/boost-cmake)
+
+add_subdirectory(examples)
+
